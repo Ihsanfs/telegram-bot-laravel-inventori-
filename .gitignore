@@ -1,0 +1,15 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/bootstrap/cache/
+.env
+.env.backup
+.env.*.php
+.php_cs.cache
+.DS_Store
+Thumbs.db
+vendor/
+.vscode/
+.idea/
+*.log
