@@ -289,7 +289,7 @@ class TelegramBotService
                         'kode_barang' => null,
                     ]));
                     $this->sendMessage($chatId,
-                        "ℹ️ Barang <b>\"{$text}\"</b> belum terdaftar.\nAkan dicatat sebagai barang baru.\n\n📦 Masukkan <b>quantity / jumlah</b>:",
+                        "ℹ️ Barang <b>\"{$text}\"</b> belum terdaftar.\nAkan dicatat sebagai barang baru.\n\n📦 Masukkan <b>quantity/jumlah/kg</b>:",
                         $this->replyKeyboard([[['text' => '❌ Batal']]])
                     );
                     return;
@@ -304,7 +304,7 @@ class TelegramBotService
                         'kode_barang' => $b->kode_barang,
                     ]));
                     $this->sendMessage($chatId,
-                        "✅ <b>{$b->nama_barang}</b>\n📦 Stok saat ini: <b>{$b->stok} {$b->satuan}</b>\n\nMasukkan <b>quantity / jumlah</b> yang masuk:",
+                        "✅ <b>{$b->nama_barang}</b>\n📦 Stok saat ini: <b>{$b->stok} {$b->satuan}</b>\n\nMasukkan <b>quantity/jumlah/kg</b> yang masuk:",
                         $this->replyKeyboard([[['text' => '❌ Batal']]])
                     );
                     return;
@@ -1345,7 +1345,7 @@ class TelegramBotService
             $nama = str_replace('pilih_masuk_baru_', '', $data);
             $user->setSession('masuk_qty', ['nama_barang' => $nama, 'barang_id' => null]);
             $this->sendMessage($chatId,
-                "➕ Barang baru: <b>{$nama}</b>\n\nMasukkan <b>quantity / jumlah</b>:",
+                "➕ Barang baru: <b>{$nama}</b>\n\nMasukkan <b>quantity/jumlah/kg</b>:",
                 $this->replyKeyboard([[['text' => '❌ Batal']]])
             );
             return;
